@@ -51,11 +51,6 @@ ProductCatalogAPI/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dl
 ProductCatalogAPI/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
 ProductCatalogAPI/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll
 ProductCatalogAPI/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
-ProductCatalogAPI/Controllers/PicController.cs
-ProductCatalogAPI/Data/CatalogSeed.cs
-ProductCatalogAPI/Migrations/20220723182222_initial.cs
-ProductCatalogAPI/Migrations/20220723182222_initial.Designer.cs
-ProductCatalogAPI/Migrations/CatalogContextModelSnapshot.cs
 ProductCatalogAPI/obj/Debug/netcoreapp3.1/apphost.exe
 ProductCatalogAPI/obj/Debug/netcoreapp3.1/ProductCatalogAPI.csproj.BuildWithSkipAnalyzers
 ProductCatalogAPI/obj/Debug/netcoreapp3.1/ProductCatalogAPI.csproj.CopyComplete
