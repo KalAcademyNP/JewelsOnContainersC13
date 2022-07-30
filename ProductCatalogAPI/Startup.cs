@@ -30,6 +30,16 @@ namespace ProductCatalogAPI
             services.AddControllers();
             services.AddDbContext<CatalogContext>(options =>
                 options.UseSqlServer(Configuration["ConnectionString"]));
+
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "JewelsOnContainers - Product Catalog API",
+                    Version = "v1",
+                    Description = "Product catalog Microservice"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +55,11 @@ namespace ProductCatalogAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger().UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "ProductCatalogAPI V1");
+            });
 
             app.UseEndpoints(endpoints =>
             {
