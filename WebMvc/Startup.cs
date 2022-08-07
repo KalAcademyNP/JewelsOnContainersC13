@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebMvc.Infrastructure;
+using WebMvc.Services;
 
 namespace WebMvc
 {
@@ -24,6 +26,9 @@ namespace WebMvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            //services.AddControllersWithViews();
+            services.AddSingleton<IHttpClient, CustomHttpClient>();
+            services.AddTransient<ICatalogService, CatalogService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,7 +45,7 @@ namespace WebMvc
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -49,7 +54,9 @@ namespace WebMvc
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Catalog}/{action=Index}");
             });
         }
     }

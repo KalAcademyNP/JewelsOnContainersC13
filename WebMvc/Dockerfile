@@ -7,10 +7,9 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
-COPY ["WebMvc/WebMvc.csproj", "WebMvc/"]
-RUN dotnet restore "WebMvc/WebMvc.csproj"
 COPY . .
-WORKDIR "/src/WebMvc"
+RUN dotnet restore "WebMvc.csproj"
+
 RUN dotnet build "WebMvc.csproj" -c Release -o /app/build
 
 FROM build AS publish

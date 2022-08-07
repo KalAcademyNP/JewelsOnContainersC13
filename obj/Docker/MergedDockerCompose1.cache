@@ -1,0 +1,51 @@
+networks:
+  backend: {}
+  frontend: {}
+services:
+  catalog:
+    build:
+      context: G:\Github\SWC13\JewelsOnContainers\ProductCatalogAPI
+      dockerfile: Dockerfile
+    container_name: jewelscatalogapi
+    depends_on:
+      mssqlserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=mssqlserver;Initial Catalog=CatalogDb;User Id=sa;Password=ProductApi(!);Connect
+        Timeout=30;
+      ExternalBaseUrl: http://localhost:7000
+    image: jewels/catalogapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - published: 7000
+      target: 80
+  mssqlserver:
+    container_name: jewelssqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ProductApi(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - published: 1449
+      target: 1433
+  webmvc:
+    build:
+      context: G:\Github\SWC13\JewelsOnContainers\WebMvc
+      dockerfile: Dockerfile
+    container_name: webshop
+    depends_on:
+      catalog:
+        condition: service_started
+    environment:
+      CatalogUrl: http://catalog
+    image: jewels/webmvc
+    networks:
+      frontend: null
+    ports:
+    - published: 7500
+      target: 80
+version: '3.4'
