@@ -42,3 +42,10 @@ G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\WebMvc.csproj.
 G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\WebMvc.dll
 G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\WebMvc.pdb
 G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\WebMvc.genruntimeconfig.cache
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
