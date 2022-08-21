@@ -59,6 +59,7 @@ services:
       dockerfile: Dockerfile
     environment:
       CatalogUrl: http://catalog
+      CartUrl: http://cart
       IdentityUrl: http://192.168.1.105:7800
       CallBackUrl: http://localhost:7500
     ports:
@@ -69,6 +70,7 @@ services:
     depends_on:
       - catalog
       - tokenserver
+      - cart
 
   tokenserver:
     image: jewels/tokenapi

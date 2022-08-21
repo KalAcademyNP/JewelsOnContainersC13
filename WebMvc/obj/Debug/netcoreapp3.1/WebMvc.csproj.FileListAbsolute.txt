@@ -55,3 +55,6 @@ G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Sh
 G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Cart\Default.cshtml.g.cs
 G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Header.cshtml.g.cs
 G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
