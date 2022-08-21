@@ -49,3 +49,9 @@ G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.Iden
 G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\bin\Debug\netcoreapp3.1\Polly.dll
+G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs
+G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CartList\Default.cshtml.g.cs
+G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Cart\Default.cshtml.g.cs
+G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Header.cshtml.g.cs
+G:\Github\SWC13\JewelsOnContainers\WebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
