@@ -125,6 +125,13 @@ namespace WebMvc.Controllers
                 return View(frmOrder);
             }
         }
+        public IActionResult Complete(int id, string userName)
+        {
+
+            _logger.LogInformation("User {userName} completed checkout on order {orderId}.", userName, id);
+            return View(id);
+
+        }
 
     }
 }
