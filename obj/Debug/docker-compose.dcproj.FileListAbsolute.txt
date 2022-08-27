@@ -79,3 +79,12 @@ G:\Github\SWC13\JewelsOnContainers\bin\Debug\CartApi.pdb
 G:\Github\SWC13\JewelsOnContainers\bin\Debug\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 G:\Github\SWC13\JewelsOnContainers\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
 G:\Github\SWC13\JewelsOnContainers\bin\Debug\Newtonsoft.Json.Bson.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\OrderApi.deps.json
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\OrderApi.runtimeconfig.json
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\OrderApi.runtimeconfig.dev.json
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\OrderApi.exe
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\OrderApi.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\Stripe.net.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\System.Configuration.ConfigurationManager.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\OrderApi.pdb

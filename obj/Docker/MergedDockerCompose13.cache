@@ -1,0 +1,155 @@
+networks:
+  backend: {}
+  frontend: {}
+services:
+  basket.data:
+    container_name: basketdata
+    image: redis
+    networks:
+      backend: null
+    ports:
+    - published: 7050
+      target: 6379
+  cart:
+    build:
+      context: G:\Github\SWC13\JewelsOnContainers\CartApi
+      dockerfile: Dockerfile
+    container_name: jewelscartapi
+    depends_on:
+      basket.data:
+        condition: service_started
+      tokenserver:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionString: basket.data
+      IdentityUrl: http://192.168.1.105:7800
+    image: jewels/cartapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - published: 7010
+      target: 80
+  catalog:
+    build:
+      context: G:\Github\SWC13\JewelsOnContainers\ProductCatalogAPI
+      dockerfile: Dockerfile
+    container_name: jewelscatalogapi
+    depends_on:
+      mssqlserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=mssqlserver;Initial Catalog=CatalogDb;User Id=sa;Password=ProductApi(!);Connect
+        Timeout=30;
+      ExternalBaseUrl: http://localhost:7000
+    image: jewels/catalogapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - published: 7000
+      target: 80
+  mssqlserver:
+    container_name: jewelssqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ProductApi(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - published: 1449
+      target: 1433
+  order:
+    build:
+      context: G:\Github\SWC13\JewelsOnContainers\OrderApi
+      dockerfile: Dockerfile
+    container_name: jewelsorderapi
+    depends_on:
+      ordersqlserver:
+        condition: service_started
+      tokenserver:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionString: Data Source=ordersqlserver;Initial Catalog=OrdersDb;User Id=sa;Password=ProductApi(!);Connect
+        Timeout=30;
+      IdentityUrl: http://192.168.1.105:7800
+    image: jewels/orderapi
+    logging:
+      driver: json-file
+      options:
+        max-file: '10'
+        max-size: 200k
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - published: 7020
+      target: 80
+  ordersqlserver:
+    container_name: jewelsordersqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ProductApi(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - published: 1450
+      target: 1433
+  tokenserver:
+    build:
+      context: G:\Github\SWC13\JewelsOnContainers\TokenServiceAPI
+      dockerfile: Dockerfile
+    container_name: jewelstokenapi
+    depends_on:
+      tokensqlserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=tokensqlserver;Initial Catalog=TokenServiceDb;User
+        Id=sa;Password=ProductApi(!);Connect Timeout=30;
+      MvcClient: http://localhost:7500
+    image: jewels/tokenapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - published: 7800
+      target: 80
+  tokensqlserver:
+    container_name: jewelstokensqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ProductApi(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - published: 1448
+      target: 1433
+  webmvc:
+    build:
+      context: G:\Github\SWC13\JewelsOnContainers\WebMvc
+      dockerfile: Dockerfile
+    container_name: webshop
+    depends_on:
+      cart:
+        condition: service_started
+      catalog:
+        condition: service_started
+      tokenserver:
+        condition: service_started
+    environment:
+      CallBackUrl: http://localhost:7500
+      CartUrl: http://cart
+      CatalogUrl: http://catalog
+      IdentityUrl: http://192.168.1.105:7800
+    image: jewels/webmvc
+    networks:
+      frontend: null
+    ports:
+    - published: 7500
+      target: 80
+version: '3.4'

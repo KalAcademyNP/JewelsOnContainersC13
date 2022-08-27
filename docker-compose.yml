@@ -35,6 +35,17 @@ services:
     networks:
       - backend
 
+  ordersqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: ProductApi(!)
+    ports:
+      - "1450:1433"
+    container_name: jewelsordersqlserver
+    networks:
+      - backend
+
   catalog:
     image: jewels/catalogapi
     build:
@@ -57,11 +68,21 @@ services:
     build:
       context: .\WebMvc
       dockerfile: Dockerfile
+    logging: 
+      driver: "json-file"
+      options: {
+          max-size: "200k",
+          max-file: "10"
+      }
     environment:
+      ASPNETCORE_ENVIRONMENT: Development
       CatalogUrl: http://catalog
       CartUrl: http://cart
+      OrderUrl: http://order
       IdentityUrl: http://192.168.1.105:7800
       CallBackUrl: http://localhost:7500
+      StripePublicKey: pk_test_jZlpubvlPmcV6QJPReImelQy
+      StripePrivateKey: sk_test_bSHT9qxwjpyCOP0qdAvHLfAA
     ports:
       - "7500:80"
     container_name: webshop
@@ -71,6 +92,7 @@ services:
       - catalog
       - tokenserver
       - cart
+      - order
 
   tokenserver:
     image: jewels/tokenapi
@@ -107,3 +129,28 @@ services:
     depends_on:
       - tokenserver
       - basket.data
+
+  order:
+    image: jewels/orderapi
+    build:
+      context: .\OrderApi
+      dockerfile: Dockerfile
+    logging: 
+      driver: "json-file"
+      options: {
+          max-size: "200k",
+          max-file: "10"
+      }
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      IdentityUrl: http://192.168.1.105:7800
+      ConnectionString: "Data Source=ordersqlserver;Initial Catalog=OrdersDb;User Id=sa;Password=ProductApi(!);Connect Timeout=30;"      
+    ports:
+      - "7020:80"
+    container_name: jewelsorderapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - tokenserver
+      - ordersqlserver
