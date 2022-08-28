@@ -88,3 +88,14 @@ G:\Github\SWC13\JewelsOnContainers\bin\Debug\Stripe.net.dll
 G:\Github\SWC13\JewelsOnContainers\bin\Debug\System.Configuration.ConfigurationManager.dll
 G:\Github\SWC13\JewelsOnContainers\bin\Debug\System.Security.Cryptography.ProtectedData.dll
 G:\Github\SWC13\JewelsOnContainers\bin\Debug\OrderApi.pdb
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\Microsoft.Extensions.Hosting.Abstractions.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\System.Text.Json.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\MassTransit.RabbitMqTransport.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\MassTransit.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\MassTransit.Abstractions.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\System.Text.Encodings.Web.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\RabbitMQ.Client.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\System.Threading.Channels.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+G:\Github\SWC13\JewelsOnContainers\bin\Debug\Microsoft.Extensions.Diagnostics.HealthChecks.dll
